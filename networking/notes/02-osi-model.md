@@ -1,5 +1,7 @@
 ## OSI Model
 
+![OSI Model diagram](../diagrams/osi-model.svg)
+
 ### 🧱 What the OSI Model Is
 The OSI Model (Open Systems Interconnection) is a 7‑layer framework that explains how data moves across a network.
 It helps engineers understand where a problem is happening and how communication flows.

@@ -1,0 +1,53 @@
+<svg viewBox="0 0 760 420" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif">
+  <rect width="760" height="420" fill="#0d1117"/>
+  <text x="380" y="34" text-anchor="middle" fill="#e6edf3" font-size="20" font-weight="700">Splitting a /24 into Four /26 Subnets</text>
+
+  <!-- Parent block -->
+  <rect x="60" y="60" width="640" height="46" rx="6" fill="#1f6feb"/>
+  <text x="380" y="89" text-anchor="middle" fill="#ffffff" font-size="15" font-weight="600">192.168.1.0/24 — 256 total IPs</text>
+
+  <!-- arrow down -->
+  <line x1="380" y1="106" x2="380" y2="130" stroke="#8b949e" stroke-width="1.5"/>
+  <polygon points="380,130 374,118 386,118" fill="#8b949e"/>
+
+  <!-- Four child /26 blocks -->
+  <g>
+    <rect x="60"  y="140" width="150" height="60" rx="6" fill="#2ea043"/>
+    <text x="135" y="165" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="600">192.168.1.0/26</text>
+    <text x="135" y="183" text-anchor="middle" fill="#d2f8d2" font-size="11">62 usable IPs</text>
+  </g>
+  <g>
+    <rect x="228" y="140" width="150" height="60" rx="6" fill="#3fb950"/>
+    <text x="303" y="165" text-anchor="middle" fill="#0d1117" font-size="13" font-weight="600">192.168.1.64/26</text>
+    <text x="303" y="183" text-anchor="middle" fill="#0d1117" font-size="11">62 usable IPs</text>
+  </g>
+  <g>
+    <rect x="396" y="140" width="150" height="60" rx="6" fill="#d29922"/>
+    <text x="471" y="165" text-anchor="middle" fill="#0d1117" font-size="13" font-weight="600">192.168.1.128/26</text>
+    <text x="471" y="183" text-anchor="middle" fill="#0d1117" font-size="11">62 usable IPs</text>
+  </g>
+  <g>
+    <rect x="564" y="140" width="150" height="60" rx="6" fill="#e3b341"/>
+    <text x="639" y="165" text-anchor="middle" fill="#0d1117" font-size="13" font-weight="600">192.168.1.192/26</text>
+    <text x="639" y="183" text-anchor="middle" fill="#0d1117" font-size="11">62 usable IPs</text>
+  </g>
+
+  <text x="380" y="225" text-anchor="middle" fill="#8b949e" font-size="13">64 IPs × 4 subnets = 256 IPs — each /26 mask is 255.255.255.192</text>
+
+  <!-- AWS VPC example -->
+  <text x="60" y="270" fill="#e6edf3" font-size="15" font-weight="700">Same pattern in an AWS VPC (10.0.0.0/16)</text>
+
+  <rect x="60"  y="290" width="200" height="56" rx="6" fill="#1f6feb"/>
+  <text x="160" y="315" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="600">Public Subnet</text>
+  <text x="160" y="333" text-anchor="middle" fill="#d7e6ff" font-size="11">10.0.1.0/24</text>
+
+  <rect x="280" y="290" width="200" height="56" rx="6" fill="#8250df"/>
+  <text x="380" y="315" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="600">Private Subnet</text>
+  <text x="380" y="333" text-anchor="middle" fill="#ecd9ff" font-size="11">10.0.2.0/24</text>
+
+  <rect x="500" y="290" width="200" height="56" rx="6" fill="#db6d28"/>
+  <text x="600" y="315" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="600">Database Subnet</text>
+  <text x="600" y="333" text-anchor="middle" fill="#ffe4cc" font-size="11">10.0.3.0/24</text>
+
+  <text x="380" y="385" text-anchor="middle" fill="#6e7681" font-size="12">Public → internet-facing · Private → app tier (via NAT) · Database → isolated</text>
+</svg>

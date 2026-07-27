@@ -1,5 +1,7 @@
 ## Subnetting & CIDR
 
+![Subnetting and CIDR diagram](../diagrams/subnetting-cidr.svg)
+
 ### 🧩 What Subnetting Is
 Subnetting is the process of splitting a large network into smaller networks.
 
